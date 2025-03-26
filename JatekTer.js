@@ -26,11 +26,15 @@ export default class JatekTer {
     }
     const INFO = new Info(this.#szamlalo, document.querySelector(".info"));
   }
+
   esemenyKivalaszt() {
     window.addEventListener("kivalaszt", (event) => {
       this.index = event.detail;
       console.log(event.detail);
-      this.#lista[this.index] = "orange";
+      if (this.#lista[this.index] !== "orange") {
+        this.#lista[this.index] = "orange";
+        this.#szamlalo++;
+      }
       this.#szuloElem.innerHTML = "";
       this.megjelenit();
     });

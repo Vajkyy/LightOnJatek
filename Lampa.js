@@ -19,7 +19,6 @@ export default class Lampa {
 
   esemeny() {
     this.elem = this.szuloElem.querySelector(".elem:last-child");
-    console.log(this.elem);
     this.elem.addEventListener("click", () => {
         
       const e = new CustomEvent("kivalaszt", { detail: this.#index });
