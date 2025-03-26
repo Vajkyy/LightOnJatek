@@ -1,5 +1,9 @@
 import JatekTer from "./JatekTer.js";
-import Lampa from "./Lampa.js";
 
 let szuloElem = document.getElementsByClassName("jatekter")[0];
-const JATEKTER = new JatekTer(szuloElem);
+let JATEKTER = new JatekTer(szuloElem);
+
+document.querySelector("button").addEventListener("click", () => {
+  szuloElem.innerHTML = "";
+  JATEKTER = new JatekTer(szuloElem);
+});

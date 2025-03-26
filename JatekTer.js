@@ -37,6 +37,7 @@ export default class JatekTer {
       }
       this.#szuloElem.innerHTML = "";
       this.megjelenit();
+      
     });
   }
 }
