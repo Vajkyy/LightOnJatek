@@ -10,7 +10,7 @@ export default class Lampa {
   }
 
   megjelenit() {
-    let html = `<div class="elem">
+    let html = `<div class="elem" style="background-color: ${this.#szin}">
                       ${this.#szin}
                   </div>`;
     this.szuloElem.insertAdjacentHTML("beforeend", html);
