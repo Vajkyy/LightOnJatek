@@ -22,12 +22,7 @@ export default class JatekTer {
   }
   megjelenit() {
     for (let index = 0; index < this.#lista.length; index++) {
-      const ELEM = new Lampa(
-        this.#lista[index],
-        index,
-        this.#szamlalo,
-        this.#szuloElem
-      );
+      const ELEM = new Lampa(this.#lista[index], index, this.#szuloElem);
     }
     const INFO = new Info(this.#szamlalo, this.#szuloElem);
   }

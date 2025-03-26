@@ -1,4 +1,4 @@
-export default class Lampa{
+export default class Lampa {
   #szin;
   #index;
   constructor(szin, index, szuloElem) {
@@ -8,13 +8,14 @@ export default class Lampa{
     this.megjelenit();
     this.esemeny();
   }
+
   megjelenit() {
-    let html = `<div class = "elem">
-                        ${this.#szin}
-                    </div>;
-        `;
+    let html = `<div class="elem">
+                      ${this.#szin}
+                  </div>`;
     this.szuloElem.insertAdjacentHTML("beforeend", html);
   }
+
   esemeny() {
     this.elem = document.querySelector(".elem:last-child");
     this.elem.addEventListener("click", () => {
