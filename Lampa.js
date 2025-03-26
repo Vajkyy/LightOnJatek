@@ -6,13 +6,13 @@ export default class Lampa {
     this.#index = index;
     this.szuloElem = szuloElem;
     this.megjelenit();
-   
   }
 
   megjelenit() {
-    let html = `<div class="elem" style="background-color: ${this.#szin}">
-                      ${this.#szin}
-                  </div>`;
+    let html = `<div class="elem" data-index="${
+      this.#index
+    }" style="background-color: ${this.#szin}">
+                </div>`;
     this.szuloElem.insertAdjacentHTML("beforeend", html);
     this.esemeny();
   }
@@ -20,7 +20,6 @@ export default class Lampa {
   esemeny() {
     this.elem = this.szuloElem.querySelector(".elem:last-child");
     this.elem.addEventListener("click", () => {
-        
       const e = new CustomEvent("kivalaszt", { detail: this.#index });
       window.dispatchEvent(e);
     });
