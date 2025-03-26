@@ -1,4 +1,4 @@
-export default class {
+export default class Lampa{
   #szin;
   #index;
   constructor(szin, index, szuloElem) {
