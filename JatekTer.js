@@ -10,7 +10,7 @@ export default class JatekTer{
     }
     megjelenit(){
         for (let index = 0; index < this.#lista.length; index++) {
-            const ELEM = new Element(this.#lista[index],index, this.szuloElem);
+            const ELEM = new Elem (this.#lista[index],index,this.#szamlalo,this.#szuloElem);
             
         }
     }
