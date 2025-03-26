@@ -1,25 +1,42 @@
-export default class JatekTer{
-    #lista
-    #szuloElem
-    #szamlalo
-    constructor(szuloElem, szamlalo){
-        this.#szuloElem = szuloElem;
-        this.#szamlalo = szamlalo;
-        this.megjelenit();
-        this.esemenyKivalaszt();
+import Info from "./Info.js";
+import Lampa from "./Lampa.js";
+
+export default class JatekTer {
+  #lista = [
+    "green",
+    "orange",
+    "orange",
+    "green",
+    "green",
+    "orange",
+    "green",
+    "orange",
+    "orange",
+  ];
+  #szuloElem;
+  #szamlalo = 5;
+  constructor(szuloElem) {
+    this.#szuloElem = szuloElem;
+    this.megjelenit();
+    this.esemenyKivalaszt();
+  }
+  megjelenit() {
+    for (let index = 0; index < this.#lista.length; index++) {
+      const ELEM = new Lampa(
+        this.#lista[index],
+        index,
+        this.#szamlalo,
+        this.#szuloElem
+      );
     }
-    megjelenit(){
-        for (let index = 0; index < this.#lista.length; index++) {
-            const ELEM = new Elem (this.#lista[index],index,this.#szamlalo,this.#szuloElem);
-            
-        }
-    }
-    esemenyKivalaszt(){
-        windows.addEventListener("kivalaszt",(event) =>{
-            this.index = event.detail;
-            this.#lista[this.index] = "";
-            this.#szuloElem.innerHTML = "";
-            this.megjelenit();
-        })
-    }
+    const INFO = new Info(this.#szamlalo, this.#szuloElem);
+  }
+  esemenyKivalaszt() {
+    windows.addEventListener("kivalaszt", (event) => {
+      this.index = event.detail;
+      this.#lista[this.index] = "";
+      this.#szuloElem.innerHTML = "";
+      this.megjelenit();
+    });
+  }
 }
