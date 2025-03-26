@@ -6,6 +6,7 @@ export default class Lampa{
     this.#index = index;
     this.szuloElem = szuloElem;
     this.megjelenit();
+    this.esemeny();
   }
   megjelenit() {
     let html = `<div class = "elem">

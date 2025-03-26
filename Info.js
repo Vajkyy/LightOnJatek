@@ -3,6 +3,7 @@ export default class Info {
   constructor(szoveg, szuloelem) {
     this.#szoveg = szoveg;
     this.szuloElem = szuloelem;
+    this.megjelenit();
     
   }
   megjelenit() {

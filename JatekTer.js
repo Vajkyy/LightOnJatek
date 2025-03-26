@@ -32,7 +32,7 @@ export default class JatekTer {
     const INFO = new Info(this.#szamlalo, this.#szuloElem);
   }
   esemenyKivalaszt() {
-    windows.addEventListener("kivalaszt", (event) => {
+    window.addEventListener("kivalaszt", (event) => {
       this.index = event.detail;
       this.#lista[this.index] = "";
       this.#szuloElem.innerHTML = "";
