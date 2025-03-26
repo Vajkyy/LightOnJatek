@@ -12,6 +12,6 @@ export default class Info {
         <h3>${this.#szoveg}</h3>
     </div>
 `;
-    this.szuloElem.innerHTML += html;
+    this.szuloElem.innerHTML = html;
   }
 }

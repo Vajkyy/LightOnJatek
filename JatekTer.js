@@ -24,13 +24,13 @@ export default class JatekTer {
     for (let index = 0; index < this.#lista.length; index++) {
       const ELEM = new Lampa(this.#lista[index], index, this.#szuloElem);
     }
-    const INFO = new Info(this.#szamlalo, this.#szuloElem);
+    const INFO = new Info(this.#szamlalo, document.querySelector(".info"));
   }
   esemenyKivalaszt() {
     window.addEventListener("kivalaszt", (event) => {
       this.index = event.detail;
       console.log(event.detail);
-      this.#lista[this.index] = "";
+      this.#lista[this.index] = "orange";
       this.#szuloElem.innerHTML = "";
       this.megjelenit();
     });
