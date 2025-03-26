@@ -6,7 +6,7 @@ export default class Lampa {
     this.#index = index;
     this.szuloElem = szuloElem;
     this.megjelenit();
-    this.esemeny();
+   
   }
 
   megjelenit() {
@@ -14,11 +14,14 @@ export default class Lampa {
                       ${this.#szin}
                   </div>`;
     this.szuloElem.insertAdjacentHTML("beforeend", html);
+    this.esemeny();
   }
 
   esemeny() {
-    this.elem = document.querySelector(".elem:last-child");
+    this.elem = this.szuloElem.querySelector(".elem:last-child");
+    console.log(this.elem);
     this.elem.addEventListener("click", () => {
+        
       const e = new CustomEvent("kivalaszt", { detail: this.#index });
       window.dispatchEvent(e);
     });

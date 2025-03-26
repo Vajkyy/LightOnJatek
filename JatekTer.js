@@ -29,6 +29,7 @@ export default class JatekTer {
   esemenyKivalaszt() {
     window.addEventListener("kivalaszt", (event) => {
       this.index = event.detail;
+      console.log(event.detail);
       this.#lista[this.index] = "";
       this.#szuloElem.innerHTML = "";
       this.megjelenit();
