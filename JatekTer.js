@@ -18,7 +18,7 @@ export default class JatekTer{
         windows.addEventListener("kivalaszt",(event) =>{
             this.index = event.detail;
             this.#lista[this.index] = "";
-            this.szuloElem.innerHTML = "";
+            this.#szuloElem.innerHTML = "";
             this.megjelenit();
         })
     }
